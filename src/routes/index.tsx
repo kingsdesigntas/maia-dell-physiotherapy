@@ -59,18 +59,21 @@ function Home() {
         <div className="mt-10 grid gap-6 text-left md:grid-cols-3">
           <ServiceCard
             img={svcHeadache.url}
+            icon={Brain}
             title="Headaches & Migraines"
             body="A targeted approach to assess and treat your headaches and migraines using gentle evidence based techniques. Maia is a Watson Headache® Certified Practitioner."
             href="/headaches-and-migraines"
           />
           <ServiceCard
             img={svcPhysio.url}
+            icon={Activity}
             title="Physiotherapy & Dry Needling"
             body="Neck, back and shoulder problems; joint pain and injuries; arthritis and chronic conditions. Improving function, reducing pain, targeted exercises and self management skills to help you move and feel better."
             href="/treatments-available"
           />
           <ServiceCard
             img={svcRehab.url}
+            icon={Dumbbell}
             title="Rehabilitation"
             body="Targeted exercise programmes to improve day to day comfort, to reach goals of returning to physical challenges or sports, and to aid your rehabilitation pre or post surgery."
             href="/treatments-available"
