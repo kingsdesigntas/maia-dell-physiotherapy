@@ -58,12 +58,7 @@ const TYPES = [
     body: "Allows more time for hands on treatment as well as exercise progression and self management planning. Ideal when dealing with more than one zone.",
     url: CLINIKO_STANDARD_FOLLOWUP_45,
   },
-  {
-    title: "1:1 Mat-work Clinical Pilates",
-    duration: "45 minutes",
-    body: "1:1 APPI Mat-work Clinical Pilates session, targeted to your rehab needs.",
-    url: CLINIKO_PILATES,
-  },
+
 ];
 
 function BookNow() {
