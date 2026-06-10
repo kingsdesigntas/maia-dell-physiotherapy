@@ -1,36 +1,30 @@
 import { useState } from "react";
 import { Link } from "@tanstack/react-router";
 import { Menu, X } from "lucide-react";
-import { BookButtons } from "./BookButtons";
-import mandala from "@/assets/mandala.jpg.asset.json";
 
 const NAV = [
-  { to: "/", label: "Home" },
-  { to: "/your-physio", label: "Your Physio" },
-  { to: "/treatments-available", label: "Treatments" },
-  { to: "/headaches-and-migraines", label: "Headaches & Migraines" },
-  { to: "/watson-headache-approach", label: "Watson Approach" },
-  { to: "/pilates", label: "Pilates" },
-  { to: "/book-now", label: "Book Now" },
-  { to: "/contact", label: "Contact" },
+  { to: "/", label: "HOME" },
+  { to: "/book-now", label: "BOOK APPOINTMENT" },
+  { to: "/contact", label: "CONTACT" },
+  { to: "/your-physio", label: "YOUR PHYSIO" },
+  { to: "/treatments-available", label: "TREATMENTS AVAILABLE" },
+  { to: "/headaches-and-migraines", label: "HEADACHES AND MIGRAINES" },
+  { to: "/watson-headache-approach", label: "WATSON APPROACH" },
+  { to: "/pilates", label: "PILATES" },
 ] as const;
 
 export function Header() {
   const [open, setOpen] = useState(false);
   return (
     <header className="sticky top-0 z-40 border-b border-border bg-background/95 backdrop-blur">
-      <div className="container-page flex items-center justify-between gap-4 py-3">
-        <Link to="/" className="flex items-center gap-3 no-underline" onClick={() => setOpen(false)}>
-          <img
-            src={mandala.url}
-            alt=""
-            width={44}
-            height={44}
-            className="h-11 w-11 rounded-full object-cover"
-          />
-          <span className="font-serif text-lg font-semibold leading-tight text-[var(--teal-deep)] sm:text-xl">
-            Maia Dell Physiotherapy
-          </span>
+      <div className="container-page py-2 text-sm">
+        <a href="mailto:maiadell.physio@gmail.com" className="text-[var(--teal-deep)]">
+          maiadell.physio@gmail.com
+        </a>
+      </div>
+      <div className="container-page flex items-center justify-between gap-4 border-t border-border py-3">
+        <Link to="/" className="font-medium text-[var(--teal-deep)]" onClick={() => setOpen(false)}>
+          Maia Dell Physiotherapy
         </Link>
 
         <nav className="hidden items-center gap-1 lg:flex" aria-label="Primary">
@@ -38,18 +32,14 @@ export function Header() {
             <Link
               key={n.to}
               to={n.to}
-              className="rounded-md px-3 py-2 text-[0.95rem] font-medium text-foreground no-underline transition hover:bg-muted"
-              activeProps={{ className: "bg-muted text-[var(--teal-deep)]" }}
+              className="rounded-md px-2 py-2 text-xs font-medium tracking-wide text-[var(--teal-deep)] hover:bg-muted"
+              activeProps={{ className: "bg-muted" }}
               activeOptions={{ exact: n.to === "/" }}
             >
               {n.label}
             </Link>
           ))}
         </nav>
-
-        <div className="hidden lg:block">
-          <BookButtons primaryLabel="Book Now" secondaryLabel="Prices" />
-        </div>
 
         <button
           type="button"
@@ -70,16 +60,13 @@ export function Header() {
                 key={n.to}
                 to={n.to}
                 onClick={() => setOpen(false)}
-                className="rounded-md px-3 py-3 text-base font-medium text-foreground no-underline hover:bg-muted"
-                activeProps={{ className: "bg-muted text-[var(--teal-deep)]" }}
+                className="rounded-md px-3 py-3 text-base font-medium text-[var(--teal-deep)] hover:bg-muted"
+                activeProps={{ className: "bg-muted" }}
                 activeOptions={{ exact: n.to === "/" }}
               >
                 {n.label}
               </Link>
             ))}
-            <div className="pt-3">
-              <BookButtons />
-            </div>
           </nav>
         </div>
       )}
