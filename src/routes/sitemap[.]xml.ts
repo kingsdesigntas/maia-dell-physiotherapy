@@ -10,7 +10,7 @@ const PATHS = [
   "/treatments-available",
   "/headaches-and-migraines",
   "/watson-headache-approach",
-  "/pilates",
+  
   "/book-now",
   "/contact",
 ];

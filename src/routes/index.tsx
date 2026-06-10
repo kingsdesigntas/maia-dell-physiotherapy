@@ -72,7 +72,7 @@ function Home() {
             img={svcRehab.url}
             title="Rehabilitation"
             body="Targeted exercise programmes to improve day to day comfort, to reach goals of returning to physical challenges or sports, and to aid your rehabilitation pre or post surgery."
-            href="/pilates"
+            href="/treatments-available"
           />
         </div>
       </section>
@@ -125,7 +125,7 @@ function ServiceCard({
   img: string;
   title: string;
   body: string;
-  href: "/headaches-and-migraines" | "/treatments-available" | "/pilates";
+  href: "/headaches-and-migraines" | "/treatments-available";
 }) {
   return (
     <article className="overflow-hidden rounded-lg border border-border bg-card shadow-sm transition hover:shadow-md">
