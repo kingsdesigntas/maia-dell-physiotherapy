@@ -1,4 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
+import { Brain, Activity, Dumbbell, type LucideIcon } from "lucide-react";
 import { PageLayout } from "@/components/PageLayout";
 import { BookButtons } from "@/components/BookButtons";
 import mandala from "@/assets/mandala.jpg.asset.json";
