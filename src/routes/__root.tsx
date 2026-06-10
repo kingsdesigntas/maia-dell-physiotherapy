@@ -77,19 +77,47 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Lovable App" },
-      { name: "description", content: "Lovable Generated Project" },
-      { name: "author", content: "Lovable" },
-      { property: "og:title", content: "Lovable App" },
-      { property: "og:description", content: "Lovable Generated Project" },
-      { property: "og:type", content: "website" },
-      { name: "twitter:card", content: "summary" },
-      { name: "twitter:site", content: "@Lovable" },
-    ],
-    links: [
+      { title: "Maia Dell Physiotherapy — Headache & Migraine Clinic, Bellerive" },
       {
-        rel: "stylesheet",
-        href: appCss,
+        name: "description",
+        content:
+          "Physiotherapy for headaches, migraines, neck, back and shoulder pain. Watson Headache® Certified Practitioner. Bellerive & Lauderdale, Tasmania.",
+      },
+      { property: "og:site_name", content: "Maia Dell Physiotherapy" },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
+    ],
+    links: [{ rel: "stylesheet", href: appCss }],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "Physiotherapy",
+          name: "Maia Dell Physiotherapy",
+          description:
+            "Headache & Migraine Clinic. Musculoskeletal physiotherapy, dry needling and clinical Pilates.",
+          email: "maiadell.physio@gmail.com",
+          faxNumber: "+61399598387",
+          address: [
+            {
+              "@type": "PostalAddress",
+              streetAddress: "13 Cambridge Road",
+              addressLocality: "Bellerive",
+              addressRegion: "TAS",
+              postalCode: "7018",
+              addressCountry: "AU",
+            },
+            {
+              "@type": "PostalAddress",
+              streetAddress: "Lauderdale Medical Centre, 444 South Arm Road",
+              addressLocality: "Lauderdale",
+              addressRegion: "TAS",
+              postalCode: "7021",
+              addressCountry: "AU",
+            },
+          ],
+        }),
       },
     ],
   }),
