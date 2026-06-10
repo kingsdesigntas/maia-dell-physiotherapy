@@ -7,7 +7,6 @@ import {
   CLINIKO_HEADACHE_FOLLOWUP_30,
   CLINIKO_STANDARD_FOLLOWUP_30,
   CLINIKO_STANDARD_FOLLOWUP_45,
-  CLINIKO_PILATES,
 } from "@/lib/cliniko";
 
 export const Route = createFileRoute("/book-now")({
