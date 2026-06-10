@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Link } from "@tanstack/react-router";
-import { Menu, X } from "lucide-react";
+import { Menu, X, ChevronDown } from "lucide-react";
 
 const NAV = [
   { to: "/", label: "HOME" },
@@ -8,13 +8,16 @@ const NAV = [
   { to: "/contact", label: "CONTACT" },
   { to: "/your-physio", label: "YOUR PHYSIO" },
   { to: "/treatments-available", label: "TREATMENTS AVAILABLE" },
-  { to: "/headaches-and-migraines", label: "HEADACHES AND MIGRAINES" },
-  { to: "/watson-headache-approach", label: "WATSON APPROACH" },
-  { to: "/pilates", label: "PILATES" },
+  {
+    to: "/headaches-and-migraines",
+    label: "HEADACHES AND MIGRAINES",
+    children: [{ to: "/watson-headache-approach", label: "WATSON APPROACH" }],
+  },
 ] as const;
 
 export function Header() {
   const [open, setOpen] = useState(false);
+  const [expanded, setExpanded] = useState<string | null>(null);
   return (
     <header className="sticky top-0 z-40 border-b border-border bg-background/95 backdrop-blur">
       <div className="container-page py-2 text-sm">
@@ -28,17 +31,43 @@ export function Header() {
         </Link>
 
         <nav className="hidden items-center gap-1 lg:flex" aria-label="Primary">
-          {NAV.map((n) => (
-            <Link
-              key={n.to}
-              to={n.to}
-              className="rounded-md px-2 py-2 text-xs font-medium tracking-wide text-[var(--teal-deep)] hover:bg-muted"
-              activeProps={{ className: "bg-muted" }}
-              activeOptions={{ exact: n.to === "/" }}
-            >
-              {n.label}
-            </Link>
-          ))}
+          {NAV.map((n) =>
+            "children" in n ? (
+              <div key={n.to} className="group relative">
+                <Link
+                  to={n.to}
+                  className="inline-flex items-center gap-1 rounded-md px-2 py-2 text-xs font-medium tracking-wide text-[var(--teal-deep)] hover:bg-muted"
+                  activeProps={{ className: "bg-muted" }}
+                >
+                  {n.label}
+                  <ChevronDown size={14} aria-hidden />
+                </Link>
+                <div className="absolute left-0 top-full hidden min-w-[14rem] flex-col rounded-md border border-border bg-background shadow-sm group-hover:flex">
+                  {n.children.map((c) => (
+                    <Link
+                      key={c.to}
+                      to={c.to}
+                      className="px-3 py-2 text-sm font-medium text-[var(--teal-deep)] hover:bg-muted"
+                      activeProps={{ className: "bg-muted" }}
+                      onClick={() => setOpen(false)}
+                    >
+                      {c.label}
+                    </Link>
+                  ))}
+                </div>
+              </div>
+            ) : (
+              <Link
+                key={n.to}
+                to={n.to}
+                className="rounded-md px-2 py-2 text-xs font-medium tracking-wide text-[var(--teal-deep)] hover:bg-muted"
+                activeProps={{ className: "bg-muted" }}
+                activeOptions={{ exact: n.to === "/" }}
+              >
+                {n.label}
+              </Link>
+            ),
+          )}
         </nav>
 
         <button
@@ -55,18 +84,59 @@ export function Header() {
       {open && (
         <div className="border-t border-border bg-background lg:hidden">
           <nav className="container-page flex flex-col gap-1 py-3" aria-label="Mobile">
-            {NAV.map((n) => (
-              <Link
-                key={n.to}
-                to={n.to}
-                onClick={() => setOpen(false)}
-                className="rounded-md px-3 py-3 text-base font-medium text-[var(--teal-deep)] hover:bg-muted"
-                activeProps={{ className: "bg-muted" }}
-                activeOptions={{ exact: n.to === "/" }}
-              >
-                {n.label}
-              </Link>
-            ))}
+            {NAV.map((n) =>
+              "children" in n ? (
+                <div key={n.to}>
+                  <button
+                    type="button"
+                    onClick={() => setExpanded((e) => (e === n.to ? null : n.to))}
+                    className="flex w-full items-center justify-between rounded-md px-3 py-3 text-left text-base font-medium text-[var(--teal-deep)] hover:bg-muted"
+                    aria-expanded={expanded === n.to}
+                  >
+                    <span>{n.label}</span>
+                    <ChevronDown
+                      size={16}
+                      className={expanded === n.to ? "rotate-180" : ""}
+                      aria-hidden
+                    />
+                  </button>
+                  {expanded === n.to && (
+                    <div className="flex flex-col pl-6">
+                      <Link
+                        to={n.to}
+                        onClick={() => { setOpen(false); setExpanded(null); }}
+                        className="rounded-md px-3 py-2 text-base font-medium text-[var(--teal-deep)] hover:bg-muted"
+                        activeProps={{ className: "bg-muted" }}
+                      >
+                        {n.label}
+                      </Link>
+                      {n.children.map((c) => (
+                        <Link
+                          key={c.to}
+                          to={c.to}
+                          onClick={() => { setOpen(false); setExpanded(null); }}
+                          className="rounded-md px-3 py-2 text-base font-medium text-[var(--teal-deep)] hover:bg-muted"
+                          activeProps={{ className: "bg-muted" }}
+                        >
+                          {c.label}
+                        </Link>
+                      ))}
+                    </div>
+                  )}
+                </div>
+              ) : (
+                <Link
+                  key={n.to}
+                  to={n.to}
+                  onClick={() => setOpen(false)}
+                  className="rounded-md px-3 py-3 text-base font-medium text-[var(--teal-deep)] hover:bg-muted"
+                  activeProps={{ className: "bg-muted" }}
+                  activeOptions={{ exact: n.to === "/" }}
+                >
+                  {n.label}
+                </Link>
+              ),
+            )}
           </nav>
         </div>
       )}

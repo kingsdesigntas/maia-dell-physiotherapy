@@ -13,7 +13,6 @@ import { Route as YourPhysioRouteImport } from './routes/your-physio'
 import { Route as WatsonHeadacheApproachRouteImport } from './routes/watson-headache-approach'
 import { Route as TreatmentsAvailableRouteImport } from './routes/treatments-available'
 import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
-import { Route as PilatesRouteImport } from './routes/pilates'
 import { Route as HeadachesAndMigrainesRouteImport } from './routes/headaches-and-migraines'
 import { Route as ContactRouteImport } from './routes/contact'
 import { Route as BookNowRouteImport } from './routes/book-now'
@@ -37,11 +36,6 @@ const TreatmentsAvailableRoute = TreatmentsAvailableRouteImport.update({
 const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
   id: '/sitemap.xml',
   path: '/sitemap.xml',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const PilatesRoute = PilatesRouteImport.update({
-  id: '/pilates',
-  path: '/pilates',
   getParentRoute: () => rootRouteImport,
 } as any)
 const HeadachesAndMigrainesRoute = HeadachesAndMigrainesRouteImport.update({
@@ -70,7 +64,6 @@ export interface FileRoutesByFullPath {
   '/book-now': typeof BookNowRoute
   '/contact': typeof ContactRoute
   '/headaches-and-migraines': typeof HeadachesAndMigrainesRoute
-  '/pilates': typeof PilatesRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/treatments-available': typeof TreatmentsAvailableRoute
   '/watson-headache-approach': typeof WatsonHeadacheApproachRoute
@@ -81,7 +74,6 @@ export interface FileRoutesByTo {
   '/book-now': typeof BookNowRoute
   '/contact': typeof ContactRoute
   '/headaches-and-migraines': typeof HeadachesAndMigrainesRoute
-  '/pilates': typeof PilatesRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/treatments-available': typeof TreatmentsAvailableRoute
   '/watson-headache-approach': typeof WatsonHeadacheApproachRoute
@@ -93,7 +85,6 @@ export interface FileRoutesById {
   '/book-now': typeof BookNowRoute
   '/contact': typeof ContactRoute
   '/headaches-and-migraines': typeof HeadachesAndMigrainesRoute
-  '/pilates': typeof PilatesRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/treatments-available': typeof TreatmentsAvailableRoute
   '/watson-headache-approach': typeof WatsonHeadacheApproachRoute
@@ -106,7 +97,6 @@ export interface FileRouteTypes {
     | '/book-now'
     | '/contact'
     | '/headaches-and-migraines'
-    | '/pilates'
     | '/sitemap.xml'
     | '/treatments-available'
     | '/watson-headache-approach'
@@ -117,7 +107,6 @@ export interface FileRouteTypes {
     | '/book-now'
     | '/contact'
     | '/headaches-and-migraines'
-    | '/pilates'
     | '/sitemap.xml'
     | '/treatments-available'
     | '/watson-headache-approach'
@@ -128,7 +117,6 @@ export interface FileRouteTypes {
     | '/book-now'
     | '/contact'
     | '/headaches-and-migraines'
-    | '/pilates'
     | '/sitemap.xml'
     | '/treatments-available'
     | '/watson-headache-approach'
@@ -140,7 +128,6 @@ export interface RootRouteChildren {
   BookNowRoute: typeof BookNowRoute
   ContactRoute: typeof ContactRoute
   HeadachesAndMigrainesRoute: typeof HeadachesAndMigrainesRoute
-  PilatesRoute: typeof PilatesRoute
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
   TreatmentsAvailableRoute: typeof TreatmentsAvailableRoute
   WatsonHeadacheApproachRoute: typeof WatsonHeadacheApproachRoute
@@ -175,13 +162,6 @@ declare module '@tanstack/react-router' {
       path: '/sitemap.xml'
       fullPath: '/sitemap.xml'
       preLoaderRoute: typeof SitemapDotxmlRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/pilates': {
-      id: '/pilates'
-      path: '/pilates'
-      fullPath: '/pilates'
-      preLoaderRoute: typeof PilatesRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/headaches-and-migraines': {
@@ -220,7 +200,6 @@ const rootRouteChildren: RootRouteChildren = {
   BookNowRoute: BookNowRoute,
   ContactRoute: ContactRoute,
   HeadachesAndMigrainesRoute: HeadachesAndMigrainesRoute,
-  PilatesRoute: PilatesRoute,
   SitemapDotxmlRoute: SitemapDotxmlRoute,
   TreatmentsAvailableRoute: TreatmentsAvailableRoute,
   WatsonHeadacheApproachRoute: WatsonHeadacheApproachRoute,
@@ -229,3 +208,13 @@ const rootRouteChildren: RootRouteChildren = {
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
+
+import type { getRouter } from './router.tsx'
+import type { startInstance } from './start.ts'
+declare module '@tanstack/react-start' {
+  interface Register {
+    ssr: true
+    router: Awaited<ReturnType<typeof getRouter>>
+    config: Awaited<ReturnType<typeof startInstance.getOptions>>
+  }
+}
