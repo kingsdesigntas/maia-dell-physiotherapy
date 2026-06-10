@@ -3,6 +3,9 @@ import { PageLayout } from "@/components/PageLayout";
 import { BookButtons } from "@/components/BookButtons";
 import mandala from "@/assets/mandala.jpg.asset.json";
 import apaLogo from "@/assets/apa-logo.png.asset.json";
+import svcHeadache from "@/assets/service-headache.jpg.asset.json";
+import svcPhysio from "@/assets/service-physio.jpg.asset.json";
+import svcRehab from "@/assets/service-rehab.jpg.asset.json";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -52,34 +55,25 @@ function Home() {
 
       <section className="container-page py-12 text-center">
         <h2>PHYSIOTHERAPY SERVICES</h2>
-        <div className="mx-auto mt-10 grid max-w-4xl gap-10 text-left md:grid-cols-3">
-          <div>
-            <h3>Headaches &amp; Migraines</h3>
-            <p className="mt-3">
-              A targeted approach to assess and treat your headaches and migraines using gentle evidence based techniques. Maia is a Watson Headache® Certified Practitioner.
-            </p>
-            <Link to="/headaches-and-migraines" className="mt-3 inline-block font-semibold">
-              Learn more →
-            </Link>
-          </div>
-          <div>
-            <h3>Physiotherapy &amp; Dry Needling</h3>
-            <p className="mt-3">
-              Neck, back and shoulder problems; joint pain and injuries; arthritis and chronic conditions. Improving function, reducing pain, targeted exercises and self management skills to help you move and feel better.
-            </p>
-            <Link to="/treatments-available" className="mt-3 inline-block font-semibold">
-              Learn more →
-            </Link>
-          </div>
-          <div>
-            <h3>Rehabilitation</h3>
-            <p className="mt-3">
-              Targeted exercise programmes to improve day to day comfort, to reach goals of returning to physical challenges or sports, and to aid your rehabilitation pre or post surgery.
-            </p>
-            <Link to="/pilates" className="mt-3 inline-block font-semibold">
-              Learn more →
-            </Link>
-          </div>
+        <div className="mt-10 grid gap-6 text-left md:grid-cols-3">
+          <ServiceCard
+            img={svcHeadache.url}
+            title="Headaches & Migraines"
+            body="A targeted approach to assess and treat your headaches and migraines using gentle evidence based techniques. Maia is a Watson Headache® Certified Practitioner."
+            href="/headaches-and-migraines"
+          />
+          <ServiceCard
+            img={svcPhysio.url}
+            title="Physiotherapy & Dry Needling"
+            body="Neck, back and shoulder problems; joint pain and injuries; arthritis and chronic conditions. Improving function, reducing pain, targeted exercises and self management skills to help you move and feel better."
+            href="/treatments-available"
+          />
+          <ServiceCard
+            img={svcRehab.url}
+            title="Rehabilitation"
+            body="Targeted exercise programmes to improve day to day comfort, to reach goals of returning to physical challenges or sports, and to aid your rehabilitation pre or post surgery."
+            href="/pilates"
+          />
         </div>
       </section>
 
@@ -119,5 +113,30 @@ function Home() {
         </p>
       </section>
     </PageLayout>
+  );
+}
+
+function ServiceCard({
+  img,
+  title,
+  body,
+  href,
+}: {
+  img: string;
+  title: string;
+  body: string;
+  href: "/headaches-and-migraines" | "/treatments-available" | "/pilates";
+}) {
+  return (
+    <article className="overflow-hidden rounded-lg border border-border bg-card shadow-sm transition hover:shadow-md">
+      <img src={img} alt="" className="aspect-[3/2] w-full object-cover" />
+      <div className="p-6">
+        <h3 className="m-0">{title}</h3>
+        <p className="mt-3">{body}</p>
+        <Link to={href} className="mt-4 inline-block font-semibold">
+          Learn more →
+        </Link>
+      </div>
+    </article>
   );
 }
