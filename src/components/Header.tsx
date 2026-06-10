@@ -38,7 +38,6 @@ export function Header() {
                   to={n.to}
                   className="inline-flex items-center gap-1 rounded-md px-2 py-2 text-xs font-medium tracking-wide text-[var(--teal-deep)] hover:bg-muted"
                   activeProps={{ className: "bg-muted" }}
-                  activeOptions={{ exact: n.to === "/" }}
                 >
                   {n.label}
                   <ChevronDown size={14} aria-hidden />
