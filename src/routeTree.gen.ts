@@ -12,6 +12,7 @@ import { Route as rootRouteImport } from './routes/__root'
 import { Route as YourPhysioRouteImport } from './routes/your-physio'
 import { Route as WatsonHeadacheApproachRouteImport } from './routes/watson-headache-approach'
 import { Route as TreatmentsAvailableRouteImport } from './routes/treatments-available'
+import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
 import { Route as PilatesRouteImport } from './routes/pilates'
 import { Route as HeadachesAndMigrainesRouteImport } from './routes/headaches-and-migraines'
 import { Route as ContactRouteImport } from './routes/contact'
@@ -31,6 +32,11 @@ const WatsonHeadacheApproachRoute = WatsonHeadacheApproachRouteImport.update({
 const TreatmentsAvailableRoute = TreatmentsAvailableRouteImport.update({
   id: '/treatments-available',
   path: '/treatments-available',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
+  id: '/sitemap.xml',
+  path: '/sitemap.xml',
   getParentRoute: () => rootRouteImport,
 } as any)
 const PilatesRoute = PilatesRouteImport.update({
@@ -65,6 +71,7 @@ export interface FileRoutesByFullPath {
   '/contact': typeof ContactRoute
   '/headaches-and-migraines': typeof HeadachesAndMigrainesRoute
   '/pilates': typeof PilatesRoute
+  '/sitemap.xml': typeof SitemapDotxmlRoute
   '/treatments-available': typeof TreatmentsAvailableRoute
   '/watson-headache-approach': typeof WatsonHeadacheApproachRoute
   '/your-physio': typeof YourPhysioRoute
@@ -75,6 +82,7 @@ export interface FileRoutesByTo {
   '/contact': typeof ContactRoute
   '/headaches-and-migraines': typeof HeadachesAndMigrainesRoute
   '/pilates': typeof PilatesRoute
+  '/sitemap.xml': typeof SitemapDotxmlRoute
   '/treatments-available': typeof TreatmentsAvailableRoute
   '/watson-headache-approach': typeof WatsonHeadacheApproachRoute
   '/your-physio': typeof YourPhysioRoute
@@ -86,6 +94,7 @@ export interface FileRoutesById {
   '/contact': typeof ContactRoute
   '/headaches-and-migraines': typeof HeadachesAndMigrainesRoute
   '/pilates': typeof PilatesRoute
+  '/sitemap.xml': typeof SitemapDotxmlRoute
   '/treatments-available': typeof TreatmentsAvailableRoute
   '/watson-headache-approach': typeof WatsonHeadacheApproachRoute
   '/your-physio': typeof YourPhysioRoute
@@ -98,6 +107,7 @@ export interface FileRouteTypes {
     | '/contact'
     | '/headaches-and-migraines'
     | '/pilates'
+    | '/sitemap.xml'
     | '/treatments-available'
     | '/watson-headache-approach'
     | '/your-physio'
@@ -108,6 +118,7 @@ export interface FileRouteTypes {
     | '/contact'
     | '/headaches-and-migraines'
     | '/pilates'
+    | '/sitemap.xml'
     | '/treatments-available'
     | '/watson-headache-approach'
     | '/your-physio'
@@ -118,6 +129,7 @@ export interface FileRouteTypes {
     | '/contact'
     | '/headaches-and-migraines'
     | '/pilates'
+    | '/sitemap.xml'
     | '/treatments-available'
     | '/watson-headache-approach'
     | '/your-physio'
@@ -129,6 +141,7 @@ export interface RootRouteChildren {
   ContactRoute: typeof ContactRoute
   HeadachesAndMigrainesRoute: typeof HeadachesAndMigrainesRoute
   PilatesRoute: typeof PilatesRoute
+  SitemapDotxmlRoute: typeof SitemapDotxmlRoute
   TreatmentsAvailableRoute: typeof TreatmentsAvailableRoute
   WatsonHeadacheApproachRoute: typeof WatsonHeadacheApproachRoute
   YourPhysioRoute: typeof YourPhysioRoute
@@ -155,6 +168,13 @@ declare module '@tanstack/react-router' {
       path: '/treatments-available'
       fullPath: '/treatments-available'
       preLoaderRoute: typeof TreatmentsAvailableRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/sitemap.xml': {
+      id: '/sitemap.xml'
+      path: '/sitemap.xml'
+      fullPath: '/sitemap.xml'
+      preLoaderRoute: typeof SitemapDotxmlRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/pilates': {
@@ -201,6 +221,7 @@ const rootRouteChildren: RootRouteChildren = {
   ContactRoute: ContactRoute,
   HeadachesAndMigrainesRoute: HeadachesAndMigrainesRoute,
   PilatesRoute: PilatesRoute,
+  SitemapDotxmlRoute: SitemapDotxmlRoute,
   TreatmentsAvailableRoute: TreatmentsAvailableRoute,
   WatsonHeadacheApproachRoute: WatsonHeadacheApproachRoute,
   YourPhysioRoute: YourPhysioRoute,
