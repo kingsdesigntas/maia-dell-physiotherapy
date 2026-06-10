@@ -1,4 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
+import { Brain, Activity, Dumbbell, type LucideIcon } from "lucide-react";
 import { PageLayout } from "@/components/PageLayout";
 import { BookButtons } from "@/components/BookButtons";
 import mandala from "@/assets/mandala.jpg.asset.json";
@@ -58,18 +59,21 @@ function Home() {
         <div className="mt-10 grid gap-6 text-left md:grid-cols-3">
           <ServiceCard
             img={svcHeadache.url}
+            icon={Brain}
             title="Headaches & Migraines"
             body="A targeted approach to assess and treat your headaches and migraines using gentle evidence based techniques. Maia is a Watson Headache® Certified Practitioner."
             href="/headaches-and-migraines"
           />
           <ServiceCard
             img={svcPhysio.url}
+            icon={Activity}
             title="Physiotherapy & Dry Needling"
             body="Neck, back and shoulder problems; joint pain and injuries; arthritis and chronic conditions. Improving function, reducing pain, targeted exercises and self management skills to help you move and feel better."
             href="/treatments-available"
           />
           <ServiceCard
             img={svcRehab.url}
+            icon={Dumbbell}
             title="Rehabilitation"
             body="Targeted exercise programmes to improve day to day comfort, to reach goals of returning to physical challenges or sports, and to aid your rehabilitation pre or post surgery."
             href="/treatments-available"
@@ -118,11 +122,13 @@ function Home() {
 
 function ServiceCard({
   img,
+  icon: Icon,
   title,
   body,
   href,
 }: {
   img: string;
+  icon: LucideIcon;
   title: string;
   body: string;
   href: "/headaches-and-migraines" | "/treatments-available";
@@ -131,6 +137,9 @@ function ServiceCard({
     <article className="overflow-hidden rounded-lg border border-border bg-card shadow-sm transition hover:shadow-md">
       <img src={img} alt="" className="aspect-[3/2] w-full object-cover" />
       <div className="p-6">
+        <div className="mb-3 inline-flex h-12 w-12 items-center justify-center rounded-full bg-primary/10 text-primary">
+          <Icon size={24} strokeWidth={1.75} aria-hidden="true" />
+        </div>
         <h3 className="m-0">{title}</h3>
         <p className="mt-3">{body}</p>
         <Link to={href} className="mt-4 inline-block font-semibold">
