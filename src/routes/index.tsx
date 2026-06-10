@@ -122,11 +122,13 @@ function Home() {
 
 function ServiceCard({
   img,
+  icon: Icon,
   title,
   body,
   href,
 }: {
   img: string;
+  icon: LucideIcon;
   title: string;
   body: string;
   href: "/headaches-and-migraines" | "/treatments-available";
@@ -135,6 +137,9 @@ function ServiceCard({
     <article className="overflow-hidden rounded-lg border border-border bg-card shadow-sm transition hover:shadow-md">
       <img src={img} alt="" className="aspect-[3/2] w-full object-cover" />
       <div className="p-6">
+        <div className="mb-3 inline-flex h-12 w-12 items-center justify-center rounded-full bg-primary/10 text-primary">
+          <Icon size={24} strokeWidth={1.75} aria-hidden="true" />
+        </div>
         <h3 className="m-0">{title}</h3>
         <p className="mt-3">{body}</p>
         <Link to={href} className="mt-4 inline-block font-semibold">
