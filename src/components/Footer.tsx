@@ -1,4 +1,6 @@
 import { Link } from "@tanstack/react-router";
+import apaLogo from "@/assets/apa-logo.png.asset.json";
+
 
 export function Footer() {
   return (
@@ -36,9 +38,17 @@ export function Footer() {
         </div>
       </div>
       <div className="border-t border-border">
-        <p className="container-page py-4 text-center text-xs text-muted-foreground">
-          © {new Date().getFullYear()} Maia Dell Physiotherapy. All rights reserved.
-        </p>
+        <div className="container-page flex flex-col items-center gap-4 py-6">
+          <img
+            src={apaLogo.url}
+            alt="Australian Physiotherapy Association Member"
+            className="h-16 w-auto"
+            loading="lazy"
+          />
+          <p className="text-center text-xs text-muted-foreground">
+            © {new Date().getFullYear()} Maia Dell Physiotherapy. All rights reserved.
+          </p>
+        </div>
       </div>
     </footer>
   );
