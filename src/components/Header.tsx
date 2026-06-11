@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { Link } from "@tanstack/react-router";
 import { Menu, X, ChevronDown } from "lucide-react";
-import { cn } from "@/lib/utils";
 
 const NAV = [
   { to: "/", label: "HOME" },
