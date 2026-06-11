@@ -1,10 +1,10 @@
 import { useState } from "react";
 import { Link } from "@tanstack/react-router";
 import { Menu, X, ChevronDown } from "lucide-react";
+import { cn } from "@/lib/utils";
 
 const NAV = [
   { to: "/", label: "HOME" },
-  { to: "/book-now", label: "BOOK APPOINTMENT" },
   { to: "/your-physio", label: "YOUR PHYSIO" },
   { to: "/treatments-available", label: "TREATMENTS AVAILABLE" },
   {
@@ -13,7 +13,40 @@ const NAV = [
     children: [{ to: "/watson-headache-approach", label: "WATSON APPROACH" }],
   },
   { to: "/contact", label: "CONTACT" },
+  { to: "/book-now", label: "BOOK APPOINTMENT" },
 ] as const;
+
+function linkClasses(to: string) {
+  if (to === "/book-now") {
+    return "rounded-md bg-primary px-4 py-2 text-xs font-medium tracking-wide text-primary-foreground shadow hover:bg-primary/90";
+  }
+  if (to === "/contact") {
+    return "rounded-md border border-primary bg-transparent px-4 py-2 text-xs font-medium tracking-wide text-primary hover:bg-primary hover:text-primary-foreground";
+  }
+  return "rounded-md px-2 py-2 text-xs font-medium tracking-wide text-[var(--teal-deep)] hover:bg-muted";
+}
+
+function activeLinkClasses(to: string) {
+  if (to === "/book-now") return "bg-primary/90";
+  if (to === "/contact") return "bg-primary text-primary-foreground";
+  return "bg-muted";
+}
+
+function mobileLinkClasses(to: string) {
+  if (to === "/book-now") {
+    return "rounded-md bg-primary px-3 py-3 text-base font-medium text-primary-foreground shadow hover:bg-primary/90";
+  }
+  if (to === "/contact") {
+    return "rounded-md border border-primary bg-transparent px-3 py-3 text-base font-medium text-primary hover:bg-primary hover:text-primary-foreground";
+  }
+  return "rounded-md px-3 py-3 text-base font-medium text-[var(--teal-deep)] hover:bg-muted";
+}
+
+function mobileActiveLinkClasses(to: string) {
+  if (to === "/book-now") return "bg-primary/90";
+  if (to === "/contact") return "bg-primary text-primary-foreground";
+  return "bg-muted";
+}
 
 export function Header() {
   const [open, setOpen] = useState(false);
@@ -60,8 +93,8 @@ export function Header() {
               <Link
                 key={n.to}
                 to={n.to}
-                className="rounded-md px-2 py-2 text-xs font-medium tracking-wide text-[var(--teal-deep)] hover:bg-muted"
-                activeProps={{ className: "bg-muted" }}
+                className={linkClasses(n.to)}
+                activeProps={{ className: activeLinkClasses(n.to) }}
                 activeOptions={{ exact: n.to === "/" }}
               >
                 {n.label}
@@ -129,8 +162,8 @@ export function Header() {
                   key={n.to}
                   to={n.to}
                   onClick={() => setOpen(false)}
-                  className="rounded-md px-3 py-3 text-base font-medium text-[var(--teal-deep)] hover:bg-muted"
-                  activeProps={{ className: "bg-muted" }}
+                  className={mobileLinkClasses(n.to)}
+                  activeProps={{ className: mobileActiveLinkClasses(n.to) }}
                   activeOptions={{ exact: n.to === "/" }}
                 >
                   {n.label}
