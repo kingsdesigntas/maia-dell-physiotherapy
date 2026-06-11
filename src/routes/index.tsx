@@ -52,6 +52,9 @@ function Home() {
         <div className="mt-8 flex justify-center">
           <BookButtons />
         </div>
+        <p className="mt-6">
+          Need more information? <Link to="/contact">Contact me</Link>.
+        </p>
       </section>
 
       <section className="container-page py-12 text-center">
