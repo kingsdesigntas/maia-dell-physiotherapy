@@ -5,7 +5,6 @@ import { Menu, X, ChevronDown } from "lucide-react";
 const NAV = [
   { to: "/", label: "HOME" },
   { to: "/book-now", label: "BOOK APPOINTMENT" },
-  { to: "/contact", label: "CONTACT" },
   { to: "/your-physio", label: "YOUR PHYSIO" },
   { to: "/treatments-available", label: "TREATMENTS AVAILABLE" },
   {
@@ -13,6 +12,7 @@ const NAV = [
     label: "HEADACHES AND MIGRAINES",
     children: [{ to: "/watson-headache-approach", label: "WATSON APPROACH" }],
   },
+  { to: "/contact", label: "CONTACT" },
 ] as const;
 
 export function Header() {
