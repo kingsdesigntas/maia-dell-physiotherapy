@@ -1,5 +1,6 @@
 import { Link } from "@tanstack/react-router";
 import apaLogo from "@/assets/apa-logo.png.asset.json";
+import mandala from "@/assets/mandala.jpg.asset.json";
 
 
 export function Footer() {
