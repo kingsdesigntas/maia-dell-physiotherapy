@@ -1,5 +1,6 @@
 import { Link } from "@tanstack/react-router";
 import apaLogo from "@/assets/apa-logo.png.asset.json";
+import mandala from "@/assets/mandala.jpg.asset.json";
 
 
 export function Footer() {
@@ -7,6 +8,14 @@ export function Footer() {
     <footer className="mt-16 border-t border-border bg-[var(--cream)]">
       <div className="container-page grid gap-10 py-12 md:grid-cols-3">
         <div>
+          <img
+            src={mandala.url}
+            alt="Maia Dell Physiotherapy logo"
+            width={64}
+            height={64}
+            className="mb-3 h-16 w-auto"
+            loading="lazy"
+          />
           <h3 className="mb-2 text-lg">Maia Dell Physiotherapy</h3>
           <p className="text-sm">
             Headache and Migraine Clinic. Musculoskeletal physiotherapy in Bellerive and Lauderdale, Tasmania.
