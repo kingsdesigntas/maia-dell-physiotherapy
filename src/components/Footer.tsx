@@ -1,6 +1,7 @@
 import { Link } from "@tanstack/react-router";
 import apaLogo from "@/assets/apa-logo.png.asset.json";
 import mandala from "@/assets/mandala.jpg.asset.json";
+import { SocialLinks } from "@/components/SocialLinks";
 
 
 export function Footer() {
@@ -44,6 +45,10 @@ export function Footer() {
             <Link to="/contact">Contact</Link>
             <Link to="/your-physio">Your Physio</Link>
           </nav>
+          <div className="mt-4">
+            <h4 className="mb-2 text-sm font-medium">Follow</h4>
+            <SocialLinks iconSize={20} />
+          </div>
         </div>
       </div>
       <div className="border-t border-border">

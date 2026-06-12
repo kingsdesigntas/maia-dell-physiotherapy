@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Link } from "@tanstack/react-router";
 import { Menu, X, ChevronDown } from "lucide-react";
+import { SocialLinks } from "@/components/SocialLinks";
 
 const NAV = [
   { to: "/", label: "HOME" },
@@ -52,10 +53,11 @@ export function Header() {
   const [expanded, setExpanded] = useState<string | null>(null);
   return (
     <header className="sticky top-0 z-40 border-b border-border bg-background/95 backdrop-blur">
-      <div className="container-page py-2 text-sm">
+      <div className="container-page flex items-center justify-between gap-4 py-2 text-sm">
         <a href="mailto:maiadell.physio@gmail.com" className="text-[var(--teal-deep)]">
           maiadell.physio@gmail.com
         </a>
+        <SocialLinks />
       </div>
       <div className="container-page flex items-center justify-between gap-4 border-t border-border py-3">
         <Link to="/" className="font-medium text-[var(--teal-deep)]" onClick={() => setOpen(false)}>
