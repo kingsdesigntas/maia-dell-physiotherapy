@@ -7,6 +7,7 @@ import apaLogo from "@/assets/apa-logo.png.asset.json";
 import svcHeadache from "@/assets/service-headache.jpg.asset.json";
 import svcPhysio from "@/assets/service-physio.jpg.asset.json";
 import svcRehab from "@/assets/service-rehab.jpg.asset.json";
+import ogImage from "@/assets/og-image.jpg.asset.json";
 
 export const Route = createFileRoute("/")({
   head: () => ({
