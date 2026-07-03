@@ -8,11 +8,6 @@ import {
   CLINIKO_STANDARD_FOLLOWUP_30,
   CLINIKO_STANDARD_FOLLOWUP_45,
 } from "@/lib/cliniko";
-import iconHeadacheInitial from "@/assets/icon-headache-initial.avif.asset.json";
-import iconStandardInitial from "@/assets/icon-standard-initial.avif.asset.json";
-import iconHeadacheFollowup from "@/assets/icon-headache-followup.avif.asset.json";
-import iconStandardFollowup30 from "@/assets/icon-standard-followup-30.avif.asset.json";
-import iconStandardFollowup45 from "@/assets/icon-standard-followup-45.avif.asset.json";
 
 export const Route = createFileRoute("/book-now")({
   head: () => ({
@@ -38,35 +33,30 @@ const TYPES = [
     duration: "1 hour",
     body: "In depth specialist appointment. Using the evidence based Watson Headache Approach. Gentle techniques.",
     url: CLINIKO_HEADACHE_INITIAL,
-    icon: iconHeadacheInitial.url,
   },
   {
     title: "Standard Initial Appointment",
     duration: "45 minutes",
     body: "Initial appointment to assess your issues, make a treatment plan and begin your treatment.",
     url: CLINIKO_STANDARD_INITIAL,
-    icon: iconStandardInitial.url,
   },
   {
     title: "Headache 30 Minute Follow Up Appointment",
     duration: "30 minutes",
     body: "Follow up appointment using the Watson Headache Approach.",
     url: CLINIKO_HEADACHE_FOLLOWUP_30,
-    icon: iconHeadacheFollowup.url,
   },
   {
     title: "Standard 30 Minute Follow Up Appointment",
     duration: "30 minutes",
     body: "Follow up appointment for ongoing musculoskeletal treatment.",
     url: CLINIKO_STANDARD_FOLLOWUP_30,
-    icon: iconStandardFollowup30.url,
   },
   {
     title: "Standard 45 Minute Follow Up",
     duration: "45 minutes",
     body: "Allows more time for hands on treatment as well as exercise progression and self management planning. Ideal when dealing with more than one zone.",
     url: CLINIKO_STANDARD_FOLLOWUP_45,
-    icon: iconStandardFollowup45.url,
   },
 ];
 
@@ -91,12 +81,6 @@ function BookNow() {
         <div className="mt-10 grid gap-5 md:grid-cols-2">
           {TYPES.map((t) => (
             <article key={t.title} className="flex flex-col rounded-lg border border-border bg-card p-6 shadow-sm">
-              <img
-                src={t.icon}
-                alt=""
-                aria-hidden="true"
-                className="mb-4 h-20 w-20 object-contain"
-              />
               <h3 className="m-0">{t.title}</h3>
               <p className="mt-1 font-semibold text-[var(--clay)]">{t.duration}</p>
               <p className="mt-2 flex-1 text-base">{t.body}</p>
