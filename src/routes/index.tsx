@@ -107,18 +107,6 @@ function Home() {
         <img src={apaLogo.url} alt="Australian Physiotherapy Association member" className="h-auto w-48 self-start" />
       </section>
 
-      <section className="container-page py-12 text-center">
-        <h2>Ready to book?</h2>
-        <p className="mx-auto mt-3">
-          Please click below to view appointment types, prices and availability.
-        </p>
-        <div className="mt-6 flex justify-center">
-          <BookButtons />
-        </div>
-        <p className="mx-auto mt-6 text-center">
-          Need more information? <Link to="/contact">Contact me</Link>.
-        </p>
-      </section>
     </PageLayout>
   );
 }
