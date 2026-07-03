@@ -77,11 +77,11 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Maia Dell Physiotherapy — Headache & Migraine Clinic, Bellerive" },
+      { title: "Maia Dell Physiotherapy" },
       {
         name: "description",
         content:
-          "Physiotherapy for headaches, migraines, neck, back and shoulder pain. Watson Headache® Certified Practitioner. Bellerive & Lauderdale, Tasmania.",
+          "Physiotherapy for headaches, migraines, neck, back and shoulder pain. Bellerive & Lauderdale, Tasmania.",
       },
       { property: "og:site_name", content: "Maia Dell Physiotherapy" },
       { property: "og:type", content: "website" },
@@ -103,12 +103,13 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         type: "application/ld+json",
         children: JSON.stringify({
           "@context": "https://schema.org",
-          "@type": "Physiotherapy",
+          "@type": "MedicalBusiness",
           name: "Maia Dell Physiotherapy",
           description:
             "Headache & Migraine Clinic. Musculoskeletal physiotherapy, dry needling and clinical Pilates.",
+          url: "https://maia-dell-physiotherapy.lovable.app/",
           email: "maiadell.physio@gmail.com",
-          faxNumber: "+61399598387",
+          telephone: "+61399598387",
           address: [
             {
               "@type": "PostalAddress",

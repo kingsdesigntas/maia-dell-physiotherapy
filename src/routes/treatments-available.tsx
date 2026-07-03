@@ -16,9 +16,9 @@ export const Route = createFileRoute("/treatments-available")({
       },
       { property: "og:title", content: "Treatments Available | Maia Dell Physiotherapy" },
       { property: "og:description", content: "Headache & migraine treatment, physiotherapy, dry needling and rehab Pilates." },
-      { property: "og:url", content: "/treatments-available" },
+      { property: "og:url", content: "https://maia-dell-physiotherapy.lovable.app/treatments-available" },
     ],
-    links: [{ rel: "canonical", href: "/treatments-available" }],
+    links: [{ rel: "canonical", href: "https://maia-dell-physiotherapy.lovable.app/treatments-available" }],
   }),
   component: Treatments,
 });

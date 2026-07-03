@@ -1,0 +1,13 @@
+# Maia Dell Physiotherapy
+
+> Physiotherapy clinic in Bellerive and Lauderdale, Tasmania, specialising in headaches, migraines, and musculoskeletal physiotherapy. Maia Dell is a Watson Headache® Certified Practitioner with over 25 years of experience.
+
+## Pages
+
+- [Home](/): Overview of Maia Dell Physiotherapy and services offered.
+- [Your Physio](/your-physio): About Maia Dell — experience, qualifications, and clinic locations.
+- [Treatments Available](/treatments-available): Physiotherapy services including headache treatment, dry needling, and rehab Pilates.
+- [Headaches and Migraines](/headaches-and-migraines): Information on types and causes of headaches and migraines.
+- [Watson Headache® Approach](/watson-headache-approach): About the Watson Headache® assessment and management protocol.
+- [Book Now](/book-now): Online booking via Cliniko for all appointment types.
+- [Contact](/contact): Contact form, clinic addresses, and details for medical professionals.

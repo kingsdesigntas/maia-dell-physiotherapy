@@ -9,9 +9,9 @@ export const Route = createFileRoute("/contact")({
       { name: "description", content: "Contact Maia Dell Physiotherapy in Bellerive and Lauderdale, Tasmania." },
       { property: "og:title", content: "Contact | Maia Dell Physiotherapy" },
       { property: "og:description", content: "Get in touch about appointments, referrals or general enquiries." },
-      { property: "og:url", content: "/contact" },
+      { property: "og:url", content: "https://maia-dell-physiotherapy.lovable.app/contact" },
     ],
-    links: [{ rel: "canonical", href: "/contact" }],
+    links: [{ rel: "canonical", href: "https://maia-dell-physiotherapy.lovable.app/contact" }],
   }),
   component: Contact,
 });
