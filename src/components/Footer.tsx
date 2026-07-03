@@ -2,6 +2,7 @@ import { Link } from "@tanstack/react-router";
 import apaLogo from "@/assets/apa-logo.png.asset.json";
 
 import { SocialLinks } from "@/components/SocialLinks";
+import { MapLink } from "@/components/MapLink";
 
 
 export function Footer() {
@@ -20,7 +21,13 @@ export function Footer() {
           <h3 className="mb-2 text-lg">Locations</h3>
           <address className="not-italic text-sm leading-relaxed">
             <p>13 Cambridge Road, Bellerive, Tasmania 7018</p>
-            <p className="mt-2">Lauderdale Medical Centre, 444 South Arm Road, Lauderdale, Tasmania 7021</p>
+            <p className="mt-1">
+              <MapLink query="13 Cambridge Road, Bellerive, Tasmania 7018" />
+            </p>
+            <p className="mt-3">Lauderdale Medical Centre, 444 South Arm Road, Lauderdale, Tasmania 7021</p>
+            <p className="mt-1">
+              <MapLink query="Lauderdale Medical Centre, 444 South Arm Road, Lauderdale, Tasmania 7021" />
+            </p>
           </address>
         </div>
 
