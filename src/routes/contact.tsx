@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { Mail } from "lucide-react";
 import { PageLayout } from "@/components/PageLayout";
-import { ContactForm } from "@/components/ContactForm";
 import { MapLink } from "@/components/MapLink";
 
 export const Route = createFileRoute("/contact")({
@@ -17,15 +17,33 @@ export const Route = createFileRoute("/contact")({
   component: Contact,
 });
 
+const MAILTO = `mailto:admin@maiadellphysiotherapy.com.au?subject=${encodeURIComponent(
+  "Physiotherapy Inquiry",
+)}&body=${encodeURIComponent("Your Message: ")}`;
+
 function Contact() {
   return (
     <PageLayout>
       <section className="container-page py-12">
         <h1>Contact me</h1>
-        <p className="mt-3">If you have any questions please contact me using the form below.</p>
+        <p className="mt-3">
+          If you have any questions please get in touch using the button below.
+        </p>
 
         <div className="mt-8 grid gap-10 md:grid-cols-[1.4fr_1fr]">
-          <ContactForm />
+          <div>
+            <a
+              href={MAILTO}
+              className="inline-flex min-h-12 items-center justify-center gap-2 rounded-md bg-primary px-6 py-3 text-base font-semibold text-primary-foreground no-underline"
+            >
+              <Mail size={20} aria-hidden="true" />
+              Email me
+            </a>
+            <p className="mt-4 text-base">
+              Or email directly:{" "}
+              <a href="mailto:admin@maiadellphysiotherapy.com.au">admin@maiadellphysiotherapy.com.au</a>
+            </p>
+          </div>
 
           <aside className="rounded-lg border border-border bg-[var(--cream)] p-6">
             <h2 className="m-0 text-xl">Medical professionals</h2>
