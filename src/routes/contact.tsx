@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { PageLayout } from "@/components/PageLayout";
 import { ContactForm } from "@/components/ContactForm";
+import { MapLink } from "@/components/MapLink";
 
 export const Route = createFileRoute("/contact")({
   head: () => ({
