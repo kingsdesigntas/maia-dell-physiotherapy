@@ -103,11 +103,13 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         type: "application/ld+json",
         children: JSON.stringify({
           "@context": "https://schema.org",
-          "@type": "Physiotherapy",
+          "@type": "MedicalBusiness",
           name: "Maia Dell Physiotherapy",
           description:
             "Headache & Migraine Clinic. Musculoskeletal physiotherapy, dry needling and clinical Pilates.",
+          url: "https://maia-dell-physiotherapy.lovable.app/",
           email: "maiadell.physio@gmail.com",
+          telephone: "+61-499-999-999",
           faxNumber: "+61399598387",
           address: [
             {
