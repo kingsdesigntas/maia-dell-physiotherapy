@@ -111,6 +111,20 @@ function BookNow() {
             </article>
           ))}
         </div>
+        </div>
+
+        <section className="mt-16 text-center">
+          <h2>Ready to book?</h2>
+          <p className="mx-auto mt-3">
+            Please click below to view appointment types, prices and availability.
+          </p>
+          <div className="mt-6 flex justify-center">
+            <BookButtons />
+          </div>
+          <p className="mx-auto mt-6 text-center">
+            Need more information? <a href="/contact">Contact me</a>.
+          </p>
+        </section>
       </section>
     </PageLayout>
   );
