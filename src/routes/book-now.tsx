@@ -100,8 +100,9 @@ function BookNow() {
         <section className="mt-16 text-center">
           <h2>Not quite sure?</h2>
           <p className="mx-auto mt-6 text-center">
-            Need more information? <a href="/contact">Contact me</a>.
+            For more information, <a href="/contact">contact me</a>.
           </p>
+
         </section>
 
       </section>
