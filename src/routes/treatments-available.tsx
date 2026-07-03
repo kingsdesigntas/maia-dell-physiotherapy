@@ -1,4 +1,4 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { createFileRoute, Link } from "@tanstack/react-router";
 import { PageLayout } from "@/components/PageLayout";
 import { BookButtons } from "@/components/BookButtons";
 import svcHeadache from "@/assets/service-headache.jpg";
@@ -39,6 +39,12 @@ function Treatments() {
                 based techniques. Maia is a <strong>Watson Headache® Certified Practitioner</strong> and has
                 attended in person the Watson Headache Approach Levels 1 & 2 and the Level 3 certification.
               </p>
+              <Link
+                to="/headaches-and-migraines"
+                className="mt-4 inline-block font-semibold text-primary underline-offset-4 hover:underline"
+              >
+                Learn more →
+              </Link>
             </div>
           </article>
 
