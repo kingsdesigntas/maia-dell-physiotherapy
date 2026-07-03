@@ -21,7 +21,7 @@ export const Route = createFileRoute("/")({
       { property: "og:title", content: "Maia Dell Physiotherapy — Headache & Migraine Clinic" },
       { property: "og:description", content: "Physiotherapy for headaches, migraines, neck, back and shoulder pain. Bellerive & Lauderdale, Tasmania." },
       { property: "og:url", content: "https://maia-dell-physiotherapy.lovable.app/" },
-      { property: "og:image", content: mandala.url },
+      { property: "og:image", content: `https://maia-dell-physiotherapy.lovable.app${ogImage.url}` },
     ],
     links: [{ rel: "canonical", href: "https://maia-dell-physiotherapy.lovable.app/" }],
   }),
