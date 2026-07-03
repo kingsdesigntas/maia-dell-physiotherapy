@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { PageLayout } from "@/components/PageLayout";
 import { BookButtons } from "@/components/BookButtons";
-import maia from "@/assets/maia.jpg.asset.json";
+import maia from "@/assets/maia.jpg";
 
 export const Route = createFileRoute("/your-physio")({
   head: () => ({
@@ -15,7 +15,7 @@ export const Route = createFileRoute("/your-physio")({
       { property: "og:title", content: "Your Physio | Maia Dell Physiotherapy" },
       { property: "og:description", content: "Meet Maia Dell — experienced physiotherapist and Watson Headache® Certified Practitioner." },
       { property: "og:url", content: "https://maia-dell-physiotherapy.lovable.app/your-physio" },
-      { property: "og:image", content: maia.url },
+      { property: "og:image", content: maia },
     ],
     links: [{ rel: "canonical", href: "https://maia-dell-physiotherapy.lovable.app/your-physio" }],
     scripts: [
@@ -29,7 +29,7 @@ export const Route = createFileRoute("/your-physio")({
           description:
             "Physiotherapist with over 25 years of experience and a Watson Headache® Certified Practitioner working in Bellerive and Lauderdale, Tasmania.",
           worksFor: { "@type": "MedicalBusiness", name: "Maia Dell Physiotherapy" },
-          image: maia.url,
+          image: maia,
           url: "https://maia-dell-physiotherapy.lovable.app/your-physio",
         }),
       },
@@ -47,7 +47,7 @@ function YourPhysio() {
 
         <div className="mt-8 grid gap-10 md:grid-cols-[auto_1fr] md:items-start">
           <img
-            src={maia.url}
+            src={maia}
             alt="Maia Dell, Physiotherapist"
             className="w-full max-w-xs rounded-lg object-cover shadow-sm"
           />

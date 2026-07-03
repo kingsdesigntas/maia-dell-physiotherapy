@@ -1,7 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { PageLayout } from "@/components/PageLayout";
 import { BookButtons } from "@/components/BookButtons";
-import brain from "@/assets/brain-tcc.png.asset.json";
+import brain from "@/assets/brain-tcc.png";
 
 export const Route = createFileRoute("/headaches-and-migraines")({
   head: () => ({
@@ -16,7 +16,7 @@ export const Route = createFileRoute("/headaches-and-migraines")({
       { property: "og:description", content: "Specialised assessment and treatment of headaches and migraines." },
       { property: "og:type", content: "article" },
       { property: "og:url", content: "https://maia-dell-physiotherapy.lovable.app/headaches-and-migraines" },
-      { property: "og:image", content: brain.url },
+      { property: "og:image", content: brain },
     ],
     links: [{ rel: "canonical", href: "https://maia-dell-physiotherapy.lovable.app/headaches-and-migraines" }],
     scripts: [
@@ -28,7 +28,7 @@ export const Route = createFileRoute("/headaches-and-migraines")({
           headline: "Types and causes of headaches and migraines",
           description:
             "Overview of headache and migraine types, the trigemino cervical complex, and how upper cervical dysfunction contributes to headache symptoms.",
-          image: brain.url,
+          image: brain,
           author: { "@type": "Person", name: "Maia Dell" },
           publisher: { "@type": "MedicalBusiness", name: "Maia Dell Physiotherapy" },
           mainEntityOfPage: "https://maia-dell-physiotherapy.lovable.app/headaches-and-migraines",
@@ -93,7 +93,7 @@ function Page() {
               headache/neck symptoms.
             </p>
           </div>
-          <img src={brain.url} alt="Diagram of the trigemino cervical complex" className="w-full max-w-xs rounded-md md:w-72" />
+          <img src={brain} alt="Diagram of the trigemino cervical complex" className="w-full max-w-xs rounded-md md:w-72" />
         </div>
 
         <h2 className="mt-12">Migraines</h2>
