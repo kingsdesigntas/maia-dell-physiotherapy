@@ -25,9 +25,9 @@ export const Route = createFileRoute("/book-now")({
       },
       { property: "og:title", content: "Book Now | Maia Dell Physiotherapy" },
       { property: "og:description", content: "View prices, availability and book your appointment online." },
-      { property: "og:url", content: "/book-now" },
+      { property: "og:url", content: "https://maia-dell-physiotherapy.lovable.app/book-now" },
     ],
-    links: [{ rel: "canonical", href: "/book-now" }],
+    links: [{ rel: "canonical", href: "https://maia-dell-physiotherapy.lovable.app/book-now" }],
   }),
   component: BookNow,
 });
