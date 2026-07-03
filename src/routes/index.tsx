@@ -72,14 +72,12 @@ function Home() {
             icon={Activity}
             title="Physiotherapy & Dry Needling"
             body="Neck, back and shoulder problems; joint pain and injuries; arthritis and chronic conditions. Improving function, reducing pain, targeted exercises and self management skills to help you move and feel better."
-            href="/treatments-available"
           />
           <ServiceCard
             img={svcRehab.url}
             icon={Dumbbell}
             title="Rehabilitation"
             body="Targeted exercise programmes to improve day to day comfort, to reach goals of returning to physical challenges or sports, and to aid your rehabilitation pre or post surgery."
-            href="/treatments-available"
           />
         </div>
       </section>
@@ -122,7 +120,7 @@ function ServiceCard({
   icon: LucideIcon;
   title: string;
   body: string;
-  href: "/headaches-and-migraines" | "/treatments-available";
+  href?: "/headaches-and-migraines" | "/treatments-available";
 }) {
   return (
     <article className="overflow-hidden rounded-lg border border-border bg-card shadow-sm transition hover:shadow-md">
@@ -133,9 +131,11 @@ function ServiceCard({
         </div>
         <h3 className="m-0">{title}</h3>
         <p className="mt-3">{body}</p>
-        <Link to={href} className="mt-4 inline-block font-semibold">
-          Learn more →
-        </Link>
+        {href && (
+          <Link to={href} className="mt-4 inline-block font-semibold">
+            Learn more →
+          </Link>
+        )}
       </div>
     </article>
   );
