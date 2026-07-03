@@ -54,8 +54,8 @@ export function Header() {
   return (
     <header className="sticky top-0 z-40 border-b border-border bg-background/95 backdrop-blur">
       <div className="container-page flex items-center justify-between gap-4 py-2 text-sm">
-        <a href="mailto:maiadell.physio@gmail.com" className="text-[var(--teal-deep)]">
-          maiadell.physio@gmail.com
+        <a href="mailto:admin@maiadellphysiotherapy.com.au" className="text-[var(--teal-deep)]">
+          admin@maiadellphysiotherapy.com.au
         </a>
         <SocialLinks />
       </div>

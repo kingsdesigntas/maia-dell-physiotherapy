@@ -28,7 +28,7 @@ export function Footer() {
           <h3 className="mb-2 text-lg">Contact</h3>
           <p className="text-sm">
             Email:{" "}
-            <a href="mailto:maiadell.physio@gmail.com">maiadell.physio@gmail.com</a>
+            <a href="mailto:admin@maiadellphysiotherapy.com.au">admin@maiadellphysiotherapy.com.au</a>
           </p>
           <p className="mt-1 text-sm">Fax: 03 9959 8387</p>
           <p className="mt-1 text-sm">Health Link: maiadell</p>
