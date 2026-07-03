@@ -7,6 +7,7 @@ import apaLogo from "@/assets/apa-logo.png.asset.json";
 import svcHeadache from "@/assets/service-headache.jpg.asset.json";
 import svcPhysio from "@/assets/service-physio.jpg.asset.json";
 import svcRehab from "@/assets/service-rehab.jpg.asset.json";
+import ogImage from "@/assets/og-image.jpg.asset.json";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -20,7 +21,7 @@ export const Route = createFileRoute("/")({
       { property: "og:title", content: "Maia Dell Physiotherapy — Headache & Migraine Clinic" },
       { property: "og:description", content: "Physiotherapy for headaches, migraines, neck, back and shoulder pain. Bellerive & Lauderdale, Tasmania." },
       { property: "og:url", content: "https://maia-dell-physiotherapy.lovable.app/" },
-      { property: "og:image", content: mandala.url },
+      { property: "og:image", content: `https://maia-dell-physiotherapy.lovable.app${ogImage.url}` },
     ],
     links: [{ rel: "canonical", href: "https://maia-dell-physiotherapy.lovable.app/" }],
   }),
