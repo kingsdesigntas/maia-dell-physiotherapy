@@ -43,7 +43,13 @@ function Contact() {
             <h2 className="mt-6 text-xl">Locations</h2>
             <address className="mt-2 not-italic text-base leading-relaxed">
               <p>13 Cambridge Road, Bellerive, Tasmania 7018</p>
-              <p className="mt-2">Lauderdale Medical Centre, 444 South Arm Road, Lauderdale, Tasmania 7021</p>
+              <p className="mt-1">
+                <MapLink query="13 Cambridge Road, Bellerive, Tasmania 7018" />
+              </p>
+              <p className="mt-3">Lauderdale Medical Centre, 444 South Arm Road, Lauderdale, Tasmania 7021</p>
+              <p className="mt-1">
+                <MapLink query="Lauderdale Medical Centre, 444 South Arm Road, Lauderdale, Tasmania 7021" />
+              </p>
             </address>
           </aside>
         </div>
