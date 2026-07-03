@@ -1,8 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import type {} from "@tanstack/react-start";
 
-// TODO: replace with the project URL once the custom domain is connected.
-const BASE_URL = "";
+const BASE_URL = "https://maia-dell-physiotherapy.lovable.app";
 
 const PATHS = [
   "/",
