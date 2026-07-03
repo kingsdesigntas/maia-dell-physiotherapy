@@ -47,7 +47,7 @@ function Home() {
           Bellerive and Lauderdale
         </p>
         <p className="mx-auto mt-6">
-          <a href="mailto:maiadell.physio@gmail.com">maiadell.physio@gmail.com</a>
+          <a href="mailto:admin@maiadellphysiotherapy.com.au">admin@maiadellphysiotherapy.com.au</a>
         </p>
         <div className="mt-8 flex justify-center">
           <BookButtons />
@@ -98,7 +98,7 @@ function Home() {
             </li>
             <li>
               Your GP may fax referrals through safely on 03 9959 8387, or via Health Link (user name: maiadell), or via email:{" "}
-              <a href="mailto:maiadell.physio@gmail.com">maiadell.physio@gmail.com</a>.
+              <a href="mailto:admin@maiadellphysiotherapy.com.au">admin@maiadellphysiotherapy.com.au</a>.
             </li>
             <li>NDIS patients who have self managed funds are welcome.</li>
             <li>Workers compensation and MAIB also accepted.</li>

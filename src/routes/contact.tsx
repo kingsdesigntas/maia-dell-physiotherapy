@@ -36,7 +36,7 @@ function Contact() {
               <li><strong>Health Link name:</strong> maiadell</li>
               <li>
                 <strong>Email:</strong>{" "}
-                <a href="mailto:maiadell.physio@gmail.com">maiadell.physio@gmail.com</a>
+                <a href="mailto:admin@maiadellphysiotherapy.com.au">admin@maiadellphysiotherapy.com.au</a>
               </li>
             </ul>
 
