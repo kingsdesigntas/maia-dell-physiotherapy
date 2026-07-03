@@ -109,8 +109,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
             "Headache & Migraine Clinic. Musculoskeletal physiotherapy, dry needling and clinical Pilates.",
           url: "https://maia-dell-physiotherapy.lovable.app/",
           email: "maiadell.physio@gmail.com",
-          telephone: "+61-499-999-999",
-          faxNumber: "+61399598387",
+          telephone: "+61399598387",
           address: [
             {
               "@type": "PostalAddress",

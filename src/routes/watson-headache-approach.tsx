@@ -10,14 +10,31 @@ export const Route = createFileRoute("/watson-headache-approach")({
       {
         name: "description",
         content:
-          "The Watson Headache® Approach — a scientifically researched protocol for the skilled assessment and management of the upper cervical spine in headache and migraine.",
+          "The Watson Headache® Approach — a scientifically researched protocol for assessment and management of the upper cervical spine in headache and migraine.",
       },
       { property: "og:title", content: "Watson Headache® Approach | Maia Dell Physiotherapy" },
       { property: "og:description", content: "Skilled assessment and management of the upper cervical spine for headache and migraine." },
-      { property: "og:url", content: "/watson-headache-approach" },
+      { property: "og:type", content: "article" },
+      { property: "og:url", content: "https://maia-dell-physiotherapy.lovable.app/watson-headache-approach" },
       { property: "og:image", content: spine.url },
     ],
-    links: [{ rel: "canonical", href: "/watson-headache-approach" }],
+    links: [{ rel: "canonical", href: "https://maia-dell-physiotherapy.lovable.app/watson-headache-approach" }],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "Article",
+          headline: "The Watson Headache® Approach",
+          description:
+            "A scientifically researched protocol for skilled assessment and management of the upper cervical spine in cervicogenic and primary headache.",
+          image: spine.url,
+          author: { "@type": "Person", name: "Maia Dell" },
+          publisher: { "@type": "MedicalBusiness", name: "Maia Dell Physiotherapy" },
+          mainEntityOfPage: "https://maia-dell-physiotherapy.lovable.app/watson-headache-approach",
+        }),
+      },
+    ],
   }),
   component: Page,
 });

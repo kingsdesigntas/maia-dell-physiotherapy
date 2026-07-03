@@ -10,14 +10,30 @@ export const Route = createFileRoute("/your-physio")({
       {
         name: "description",
         content:
-          "Maia Dell is a Physiotherapist with over 25 years of experience and a Watson Headache® Certified Practitioner working from Bellerive and Lauderdale, Tasmania.",
+          "Maia Dell — Physiotherapist with 25+ years experience and Watson Headache® Certified Practitioner. Bellerive & Lauderdale, Tasmania.",
       },
       { property: "og:title", content: "Your Physio | Maia Dell Physiotherapy" },
       { property: "og:description", content: "Meet Maia Dell — experienced physiotherapist and Watson Headache® Certified Practitioner." },
-      { property: "og:url", content: "/your-physio" },
+      { property: "og:url", content: "https://maia-dell-physiotherapy.lovable.app/your-physio" },
       { property: "og:image", content: maia.url },
     ],
-    links: [{ rel: "canonical", href: "/your-physio" }],
+    links: [{ rel: "canonical", href: "https://maia-dell-physiotherapy.lovable.app/your-physio" }],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "Person",
+          name: "Maia Dell",
+          jobTitle: "Physiotherapist",
+          description:
+            "Physiotherapist with over 25 years of experience and a Watson Headache® Certified Practitioner working in Bellerive and Lauderdale, Tasmania.",
+          worksFor: { "@type": "MedicalBusiness", name: "Maia Dell Physiotherapy" },
+          image: maia.url,
+          url: "https://maia-dell-physiotherapy.lovable.app/your-physio",
+        }),
+      },
+    ],
   }),
   component: YourPhysio,
 });

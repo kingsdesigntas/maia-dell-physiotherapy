@@ -10,14 +10,31 @@ export const Route = createFileRoute("/headaches-and-migraines")({
       {
         name: "description",
         content:
-          "Specialised assessment and treatment of headaches and migraines using the Watson Headache Approach. Slow, controlled, gentle techniques.",
+          "Specialised assessment and treatment of headaches and migraines using the Watson Headache® Approach. Slow, controlled, gentle techniques.",
       },
       { property: "og:title", content: "Headaches and Migraines | Maia Dell Physiotherapy" },
       { property: "og:description", content: "Specialised assessment and treatment of headaches and migraines." },
-      { property: "og:url", content: "/headaches-and-migraines" },
+      { property: "og:type", content: "article" },
+      { property: "og:url", content: "https://maia-dell-physiotherapy.lovable.app/headaches-and-migraines" },
       { property: "og:image", content: brain.url },
     ],
-    links: [{ rel: "canonical", href: "/headaches-and-migraines" }],
+    links: [{ rel: "canonical", href: "https://maia-dell-physiotherapy.lovable.app/headaches-and-migraines" }],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "Article",
+          headline: "Types and causes of headaches and migraines",
+          description:
+            "Overview of headache and migraine types, the trigemino cervical complex, and how upper cervical dysfunction contributes to headache symptoms.",
+          image: brain.url,
+          author: { "@type": "Person", name: "Maia Dell" },
+          publisher: { "@type": "MedicalBusiness", name: "Maia Dell Physiotherapy" },
+          mainEntityOfPage: "https://maia-dell-physiotherapy.lovable.app/headaches-and-migraines",
+        }),
+      },
+    ],
   }),
   component: Page,
 });
