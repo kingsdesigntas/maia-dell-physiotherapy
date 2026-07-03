@@ -111,7 +111,7 @@ function BookNow() {
             </article>
           ))}
         </div>
-        </div>
+
 
         <section className="mt-16 text-center">
           <h2>Ready to book?</h2>
