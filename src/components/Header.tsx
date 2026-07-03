@@ -28,7 +28,7 @@ function linkClasses(to: string) {
 
 function activeLinkClasses(to: string) {
   if (to === "/book-now") return "bg-primary/90";
-  if (to === "/contact") return "bg-primary !text-primary-foreground";
+  if (to === "/contact") return "bg-background !text-primary";
 
   return "bg-muted";
 }
@@ -45,7 +45,7 @@ function mobileLinkClasses(to: string) {
 
 function mobileActiveLinkClasses(to: string) {
   if (to === "/book-now") return "bg-primary/90";
-  if (to === "/contact") return "bg-primary !text-primary-foreground";
+  if (to === "/contact") return "bg-background !text-primary";
   return "bg-muted";
 }
 
