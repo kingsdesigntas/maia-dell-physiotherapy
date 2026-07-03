@@ -2,12 +2,12 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { Brain, Activity, Dumbbell, type LucideIcon } from "lucide-react";
 import { PageLayout } from "@/components/PageLayout";
 import { BookButtons } from "@/components/BookButtons";
-import mandala from "@/assets/mandala.jpg.asset.json";
-import apaLogo from "@/assets/apa-logo.png.asset.json";
-import svcHeadache from "@/assets/service-headache.jpg.asset.json";
-import svcPhysio from "@/assets/service-physio.jpg.asset.json";
-import svcRehab from "@/assets/service-rehab.jpg.asset.json";
-import ogImage from "@/assets/og-image.jpg.asset.json";
+import mandala from "@/assets/mandala.jpg";
+import apaLogo from "@/assets/apa-logo.png";
+import svcHeadache from "@/assets/service-headache.jpg";
+import svcPhysio from "@/assets/service-physio.jpg";
+import svcRehab from "@/assets/service-rehab.jpg";
+import ogImage from "@/assets/og-image.jpg";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -21,7 +21,7 @@ export const Route = createFileRoute("/")({
       { property: "og:title", content: "Maia Dell Physiotherapy — Headache & Migraine Clinic" },
       { property: "og:description", content: "Physiotherapy for headaches, migraines, neck, back and shoulder pain. Bellerive & Lauderdale, Tasmania." },
       { property: "og:url", content: "https://maia-dell-physiotherapy.lovable.app/" },
-      { property: "og:image", content: `https://maia-dell-physiotherapy.lovable.app${ogImage.url}` },
+      { property: "og:image", content: `https://maia-dell-physiotherapy.lovable.app${ogImage}` },
     ],
     links: [{ rel: "canonical", href: "https://maia-dell-physiotherapy.lovable.app/" }],
   }),
@@ -33,7 +33,7 @@ function Home() {
     <PageLayout>
       <section className="container-page py-12 text-center md:py-16">
         <img
-          src={mandala.url}
+          src={mandala}
           alt="Maia Dell Physiotherapy logo"
           width={220}
           height={220}
@@ -62,20 +62,20 @@ function Home() {
         <h2>PHYSIOTHERAPY SERVICES</h2>
         <div className="mt-10 grid gap-6 text-left md:grid-cols-3">
           <ServiceCard
-            img={svcHeadache.url}
+            img={svcHeadache}
             icon={Brain}
             title="Headaches & Migraines"
             body="A targeted approach to assess and treat your headaches and migraines using gentle evidence based techniques. Maia is a Watson Headache® Certified Practitioner."
             href="/headaches-and-migraines"
           />
           <ServiceCard
-            img={svcPhysio.url}
+            img={svcPhysio}
             icon={Activity}
             title="Physiotherapy & Dry Needling"
             body="Neck, back and shoulder problems; joint pain and injuries; arthritis and chronic conditions. Improving function, reducing pain, targeted exercises and self management skills to help you move and feel better."
           />
           <ServiceCard
-            img={svcRehab.url}
+            img={svcRehab}
             icon={Dumbbell}
             title="Rehabilitation"
             body="Targeted exercise programmes to improve day to day comfort, to reach goals of returning to physical challenges or sports, and to aid your rehabilitation pre or post surgery."
@@ -103,7 +103,7 @@ function Home() {
             <li>Workers compensation and MAIB also accepted.</li>
           </ul>
         </div>
-        <img src={apaLogo.url} alt="Australian Physiotherapy Association member" className="h-auto w-48 self-start" />
+        <img src={apaLogo} alt="Australian Physiotherapy Association member" className="h-auto w-48 self-start" />
       </section>
 
     </PageLayout>

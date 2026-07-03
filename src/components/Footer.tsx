@@ -1,5 +1,5 @@
 import { Link } from "@tanstack/react-router";
-import apaLogo from "@/assets/apa-logo.png.asset.json";
+import apaLogo from "@/assets/apa-logo.png";
 
 import { SocialLinks } from "@/components/SocialLinks";
 import { MapLink } from "@/components/MapLink";
@@ -53,7 +53,7 @@ export function Footer() {
       <div className="border-t border-border">
         <div className="container-page flex flex-col items-center gap-4 py-6">
           <img
-            src={apaLogo.url}
+            src={apaLogo}
             alt="Australian Physiotherapy Association Member"
             className="h-16 w-auto"
             loading="lazy"

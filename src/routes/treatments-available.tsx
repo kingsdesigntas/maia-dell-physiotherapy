@@ -1,9 +1,9 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { PageLayout } from "@/components/PageLayout";
 import { BookButtons } from "@/components/BookButtons";
-import svcHeadache from "@/assets/service-headache.jpg.asset.json";
-import svcPhysio from "@/assets/service-physio.jpg.asset.json";
-import svcRehab from "@/assets/service-rehab.jpg.asset.json";
+import svcHeadache from "@/assets/service-headache.jpg";
+import svcPhysio from "@/assets/service-physio.jpg";
+import svcRehab from "@/assets/service-rehab.jpg";
 
 export const Route = createFileRoute("/treatments-available")({
   head: () => ({
@@ -31,7 +31,7 @@ function Treatments() {
 
         <div className="mt-10 grid gap-8 md:grid-cols-3">
           <article className="overflow-hidden rounded-lg border border-border bg-card shadow-sm">
-            <img src={svcHeadache.url} alt="" className="aspect-[3/2] w-full object-cover" />
+            <img src={svcHeadache} alt="" className="aspect-[3/2] w-full object-cover" />
             <div className="p-6">
               <h2 className="m-0 text-xl">Headaches & Migraines</h2>
               <p className="mt-3">
@@ -43,7 +43,7 @@ function Treatments() {
           </article>
 
           <article className="overflow-hidden rounded-lg border border-border bg-card shadow-sm">
-            <img src={svcPhysio.url} alt="" className="aspect-[3/2] w-full object-cover" />
+            <img src={svcPhysio} alt="" className="aspect-[3/2] w-full object-cover" />
             <div className="p-6">
               <h2 className="m-0 text-xl">Physiotherapy and Dry Needling</h2>
               <p className="mt-3">
@@ -55,7 +55,7 @@ function Treatments() {
           </article>
 
           <article className="overflow-hidden rounded-lg border border-border bg-card shadow-sm">
-            <img src={svcRehab.url} alt="" className="aspect-[3/2] w-full object-cover" />
+            <img src={svcRehab} alt="" className="aspect-[3/2] w-full object-cover" />
             <div className="p-6">
               <h2 className="m-0 text-xl">Rehab Pilates Sessions</h2>
               <p className="mt-3">Targeted exercise programmes:</p>

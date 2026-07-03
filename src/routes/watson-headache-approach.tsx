@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { PageLayout } from "@/components/PageLayout";
 import { BookButtons } from "@/components/BookButtons";
-import spine from "@/assets/cervical-spine.png.asset.json";
+import spine from "@/assets/cervical-spine.png";
 
 export const Route = createFileRoute("/watson-headache-approach")({
   head: () => ({
@@ -16,7 +16,7 @@ export const Route = createFileRoute("/watson-headache-approach")({
       { property: "og:description", content: "Skilled assessment and management of the upper cervical spine for headache and migraine." },
       { property: "og:type", content: "article" },
       { property: "og:url", content: "https://maia-dell-physiotherapy.lovable.app/watson-headache-approach" },
-      { property: "og:image", content: spine.url },
+      { property: "og:image", content: spine },
     ],
     links: [{ rel: "canonical", href: "https://maia-dell-physiotherapy.lovable.app/watson-headache-approach" }],
     scripts: [
@@ -28,7 +28,7 @@ export const Route = createFileRoute("/watson-headache-approach")({
           headline: "The Watson Headache® Approach",
           description:
             "A scientifically researched protocol for skilled assessment and management of the upper cervical spine in cervicogenic and primary headache.",
-          image: spine.url,
+          image: spine,
           author: { "@type": "Person", name: "Maia Dell" },
           publisher: { "@type": "MedicalBusiness", name: "Maia Dell Physiotherapy" },
           mainEntityOfPage: "https://maia-dell-physiotherapy.lovable.app/watson-headache-approach",
@@ -86,7 +86,7 @@ function Page() {
               .
             </p>
           </div>
-          <img src={spine.url} alt="Diagram of the upper cervical spine" className="w-full max-w-xs rounded-md md:w-72" />
+          <img src={spine} alt="Diagram of the upper cervical spine" className="w-full max-w-xs rounded-md md:w-72" />
         </div>
 
         <div className="mt-10">
