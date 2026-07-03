@@ -120,7 +120,7 @@ function ServiceCard({
   icon: LucideIcon;
   title: string;
   body: string;
-  href: "/headaches-and-migraines" | "/treatments-available";
+  href?: "/headaches-and-migraines" | "/treatments-available";
 }) {
   return (
     <article className="overflow-hidden rounded-lg border border-border bg-card shadow-sm transition hover:shadow-md">
@@ -131,9 +131,11 @@ function ServiceCard({
         </div>
         <h3 className="m-0">{title}</h3>
         <p className="mt-3">{body}</p>
-        <Link to={href} className="mt-4 inline-block font-semibold">
-          Learn more →
-        </Link>
+        {href && (
+          <Link to={href} className="mt-4 inline-block font-semibold">
+            Learn more →
+          </Link>
+        )}
       </div>
     </article>
   );
