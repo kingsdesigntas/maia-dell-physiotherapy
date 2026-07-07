@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { PageLayout } from "@/components/PageLayout";
 import { BookButtons } from "@/components/BookButtons";
+import { MapLink } from "@/components/MapLink";
 import maia from "@/assets/maia.jpg";
 
 export const Route = createFileRoute("/your-physio")({
@@ -97,6 +98,9 @@ function YourPhysio() {
             <div className="rounded-lg border border-border bg-card p-6">
               <h3 className="m-0">Bellerive</h3>
               <p className="mt-2">13 Cambridge Road, Bellerive, Tasmania 7018</p>
+              <p className="mt-1">
+                <MapLink query="13 Cambridge Road, Bellerive, Tasmania 7018" />
+              </p>
               <p className="mt-1 text-base">In the historic Police station building.</p>
               <p className="mt-1 text-base">
                 Free parking and access at the rear of the building via the Community Arts Centre on
@@ -106,6 +110,9 @@ function YourPhysio() {
             <div className="rounded-lg border border-border bg-card p-6">
               <h3 className="m-0">Lauderdale</h3>
               <p className="mt-2">Lauderdale Medical Centre, 444 South Arm Road, Lauderdale, Tasmania 7021</p>
+              <p className="mt-1">
+                <MapLink query="Lauderdale Medical Centre, 444 South Arm Road, Lauderdale, Tasmania 7021" />
+              </p>
             </div>
           </div>
         </div>
