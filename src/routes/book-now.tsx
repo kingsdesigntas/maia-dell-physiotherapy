@@ -38,7 +38,7 @@ const TYPES = [
     title: "Standard Initial Appointment",
     duration: "45 minutes",
     body: "Initial appointment to assess your issues, make a treatment plan and begin your treatment.",
-    url: CLINIKO_STANDARD_INITIAL,
+    url: CLINIKO_STANDARD_FOLLOWUP_45,
   },
   {
     title: "Headache 30 Minute Follow Up Appointment",
