@@ -70,10 +70,7 @@ function YourPhysio() {
             <h2 className="mt-8">Maia is also certified and experienced in:</h2>
             <ul className="mt-2 list-disc space-y-1 pl-5">
               <li>Dry needling as an adjunct to treatment.</li>
-              <li>
-                Teaching mat-work Pilates. She offers 1:1 mat work Clinical Pilates sessions to target
-                rehab and to help you move and feel better.
-              </li>
+              <li>Certified APPI Pilates matwork Instructor.</li>
             </ul>
 
             <p className="mt-6">Maia is a certified APA member and registered under AHPRA.</p>
