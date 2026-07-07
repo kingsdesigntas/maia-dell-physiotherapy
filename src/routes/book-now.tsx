@@ -56,7 +56,7 @@ const TYPES = [
     title: "Standard 45 Minute Follow Up",
     duration: "45 minutes",
     body: "Allows more time for hands on treatment as well as exercise progression and self management planning. Ideal when dealing with more than one zone.",
-    url: CLINIKO_STANDARD_FOLLOWUP_45,
+    url: CLINIKO_STANDARD_FOLLOWUP_30,
   },
 ];
 
